@@ -22,12 +22,29 @@ public class DeveloperTest {
 
     @Test
     public void getName_returns_correct_name() {
-        // TODO: Replace Chris G. with your name as shown on
-        // <https://bit.ly/cs156-s25-teams>
-        assertEquals("Chris G.", Developer.getName());
+        assertEquals("Nikunj P.", Developer.getName());
     }
 
-    // TODO: Add additional tests as needed to get to 100% jacoco line coverage, and
-    // 100% mutation coverage (all mutants timed out or killed)
+    @Test
+    public void getGithubId_returns_correct_id() {
+        assertEquals("nikunjparasar", Developer.getGithubId());
+    }
+
+    @Test
+    public void getTeam_returns_correct_team_name() {
+        Team  t = Developer.getTeam();
+        assertEquals("s25-13", t.getName());
+    }
+
+    @Test
+    public void getTeam_returns_correct_team_members() {
+        Team  t = Developer.getTeam();
+        assertTrue(t.getMembers().contains("Nikunj P."),"Team should contain Nikunj P.");
+        assertTrue(t.getMembers().contains("Conner S."),"Team should contain Conner S.");
+        assertTrue(t.getMembers().contains("Cheng X."),"Team should contain Cheng X.");
+        assertTrue(t.getMembers().contains("Kenneth T."),"Team should contain Kenneth T.");
+        assertTrue(t.getMembers().contains("Timothy W."),"Team should contain Timothy W.");
+        assertTrue(t.getMembers().contains("Tuan L."),"Team should contain Tuan L.");
+    }
 
 }
